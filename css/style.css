@@ -1,18 +1,17 @@
 body {
-  background-color: aquamarine;
+  background-color: black;
 }
 
 h1 {
-margin: 20px;
-font-size: large;
+margin: 10px;
+font-size: x-large;
 font-weight: bold;
+background-color: white;
+color: rgb(2, 108, 179);
 }
 
 p {
   padding: 10px;
-}
-
-#first-paragraph {
-  background-color: black;
-  color: aquamarine;
+  background-color: white;
+  color: rgb(2, 108, 179);
 }
