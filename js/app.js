@@ -46,18 +46,22 @@ if(doYouHave === 'yes' || doYouHave === 'y'){
 alert(`It is wonderful to meet you ${username}! I am so thrilled you could tell I am from Neptune. Did my accent give it away? I can tell you realized I am now stranded here not thanks in part to the smoldering wreckage of metal behind me that used to be my ship. I am so happy to hear you have a spare rocket ship that can take me home! Shall we lift off to the cosmos above?`);
 
 // Ryan - Question 6 (Lab 3 Update):
-alert('You have 10 guess. Guess 1-10')
+var UserNumber = 10;
+var counter = 0;
+var MaxTries = 6; //Max number of times the user can guess the random number
 
-var i = 0;
-var answer = 3;
-var guess = prompt("What's your guess?");
+var RandomNumber = Math.floor(Math.random() * UserNumber) +1;
 
-for (i=0; i<10; i++) {
-  if (answer == guess) {
-    alert("You guessed correctly")
-    break;
-  } else {
-    guess == prompt("Please Try Again");
+while (Attempts != RandomNumber) {
+  var Attempts = prompt("Please select a random number between 1 and " + UserNumber);
+  counter += 1;
+
+  if (counter > MaxTries) {
+    alert("You have no more tries left. Press F5 to play again");
+    break
   }
-  // console.log(i + 1);
+
+  if (Attempts == RandomNumber)
+  alert(`Well done, that is correct! The random number was ${RandomNumber}! It took you ${counter} attempts to get the correct number`);
+
 }
