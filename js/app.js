@@ -40,4 +40,7 @@ if(doYouHave === 'yes' || doYouHave === 'y'){
 }
 
 // Final Message
-alert('It is wonderful to meet you ' + username + '. ' + 'I am so thrilled you could tell I am from Neptune' + '. ' + 'Did my accent give it away' + '? ' + 'I can tell you realized I am now stranded here no thanks in part to the smoldering wreckage of metal behind me that used to be my ship' + '. ' + 'I am so happy to hear you have a spare rocket ship that can take me home' + '! ' + 'Shall we lift off to the cosmos above' + '? ');
+// alert('It is wonderful to meet you ' + username + '. ' + 'I am so thrilled you could tell I am from Neptune' + '. ' + 'Did my accent give it away' + '? ' + 'I can tell you realized I am now stranded here no thanks in part to the smoldering wreckage of metal behind me that used to be my ship' + '. ' + 'I am so happy to hear you have a spare rocket ship that can take me home' + '! ' + 'Shall we lift off to the cosmos above' + '? ');
+
+// Final Message with Template Literal
+alert(`It is wonderful to meet you ${username}! I am so thrilled you could tell I am from Neptune.Did my accent give it away? I can tell you realized I am now stranded here not thanks in part to the smoldering wreckage of metal behind me that used to be my ship. I am so happy to hear you have a spare rocket ship that can take me home! Shall we lift off to the cosmos above?`);
