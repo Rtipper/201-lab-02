@@ -29,7 +29,7 @@ if(rocketShip === 'yes' || rocketShip === 'y'){
 var returnHome = prompt('Will you help me return home?').toLowerCase();
 if(returnHome === 'yes' || returnHome === 'y'){
   // console.log('Yes? Hooray! I can/t wait to retun home!');
-  alert('Yes? Hooray! I can/t wait to retun home!');
+  alert('Yes? Hooray! I cant wait to retun home!');
 }
 
 // Ryan - Question 5:
@@ -43,6 +43,21 @@ if(doYouHave === 'yes' || doYouHave === 'y'){
 // alert('It is wonderful to meet you ' + username + '. ' + 'I am so thrilled you could tell I am from Neptune' + '. ' + 'Did my accent give it away' + '? ' + 'I can tell you realized I am now stranded here no thanks in part to the smoldering wreckage of metal behind me that used to be my ship' + '. ' + 'I am so happy to hear you have a spare rocket ship that can take me home' + '! ' + 'Shall we lift off to the cosmos above' + '? ');
 
 // Final Message with Template Literal
-alert(`It is wonderful to meet you ${username}! I am so thrilled you could tell I am from Neptune.Did my accent give it away? I can tell you realized I am now stranded here not thanks in part to the smoldering wreckage of metal behind me that used to be my ship. I am so happy to hear you have a spare rocket ship that can take me home! Shall we lift off to the cosmos above?`);
+alert(`It is wonderful to meet you ${username}! I am so thrilled you could tell I am from Neptune. Did my accent give it away? I can tell you realized I am now stranded here not thanks in part to the smoldering wreckage of metal behind me that used to be my ship. I am so happy to hear you have a spare rocket ship that can take me home! Shall we lift off to the cosmos above?`);
 
 // Ryan - Question 6 (Lab 3 Update):
+alert('You have 10 guess. Guess 1-10')
+
+var i = 0;
+var answer = 3;
+var guess = prompt("What's your guess?");
+
+for (i=0; i<10; i++) {
+  if (answer == guess) {
+    alert("You guessed correctly")
+    break;
+  } else {
+    guess == prompt("Please Try Again");
+  }
+  // console.log(i + 1);
+}
