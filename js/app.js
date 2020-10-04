@@ -65,3 +65,21 @@ while (Attempts != RandomNumber) {
   alert(`Well done, that is correct! The random number was ${RandomNumber}! It took you ${counter} attempts to get the correct number`);
 
 }
+
+// Ryan - Question 7 (Lab 3 Update):
+
+var MaxTries = 6; //Max number of times the user can guess the random number
+var listItems = ['item1', 'item2', 'item3', 'item4', 'item5'];
+
+while (Attempts != listItems) {
+  var Attempts = prompt("Please enter the correct packing list for camping");
+
+  if (counter > MaxTries) {
+    alert("You have no more tries left. Press F5 to play again");
+    break
+  }
+
+  if (Attempts == listItems)
+  alert(`Well done, that is correct! The random number was ${RandomNumber}! It took you ${counter} attempts to get the correct number`);
+
+}
