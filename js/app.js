@@ -6,35 +6,35 @@ alert('Greetings ' + username)
 
 // Ryan - Question 1:
 var homeLocation = prompt('Am I from outer space?').toLowerCase();
-if(homeLocation === 'yes' || homeLocation === 'y'){
+if (homeLocation === 'yes' || homeLocation === 'y') {
   // console.log('Yes! I live in outer space');
   alert('Yes! I live in outer space');
 }
 
 // Ryan - Question 2:
 var planet = prompt('Am I from the planet Neptune?').toLowerCase();
-if(planet === 'yes' || planet === 'y'){
+if (planet === 'yes' || planet === 'y') {
   // console.log('Yes! I am indeed from Neptune');
   alert('Yes! I am indeed from Neptune');
 }
 
 // Ryan - Question 3:
 var rocketShip = prompt('Did I first arrive there via rocket ship?').toLowerCase();
-if(rocketShip === 'yes' || rocketShip === 'y'){
+if (rocketShip === 'yes' || rocketShip === 'y') {
   // console.log('Yes! I did arrive by rocket ship');
   alert('Yes! I did first arrive there by rocket ship');
 }
 
 // Ryan - Question 4:
 var returnHome = prompt('Will you help me return home?').toLowerCase();
-if(returnHome === 'yes' || returnHome === 'y'){
+if (returnHome === 'yes' || returnHome === 'y') {
   // console.log('Yes? Hooray! I can/t wait to retun home!');
   alert('Yes? Hooray! I cant wait to retun home!');
 }
 
 // Ryan - Question 5:
 var doYouHave = prompt('Wait, do you have an extra rocket ship?').toLowerCase();
-if(doYouHave === 'yes' || doYouHave === 'y'){
+if (doYouHave === 'yes' || doYouHave === 'y') {
   // console.log('This is wonderful news indeed!');
   alert('This is wonderful news indeed!');
 }
@@ -50,36 +50,44 @@ var UserNumber = 10;
 var counter = 0;
 var MaxTries = 6; //Max number of times the user can guess the random number
 
-var RandomNumber = Math.floor(Math.random() * UserNumber) +1;
+var RandomNumber = Math.floor(Math.random() * UserNumber) + 1;
 
 while (Attempts != RandomNumber) {
   var Attempts = prompt("Please select a random number between 1 and " + UserNumber);
   counter += 1;
 
   if (counter > MaxTries) {
-    alert("You have no more tries left. Press F5 to play again");
+    alert("You have no more tries left. Better luck next time.");
     break
   }
 
   if (Attempts == RandomNumber)
-  alert(`Well done, that is correct! The random number was ${RandomNumber}! It took you ${counter} attempts to get the correct number`);
+    alert(`Well done, that is correct! The random number was ${RandomNumber}! It took you ${counter} attempts to get the correct number`);
 
 }
 
 // Ryan - Question 7 (Lab 3 Update):
+var counter = 0;
+var MaxTries = 6;
 
-var MaxTries = 6; //Max number of times the user can guess the random number
-var listItems = ['item1', 'item2', 'item3', 'item4', 'item5'];
-
-while (Attempts != listItems) {
-  var Attempts = prompt("Please enter the correct packing list for camping");
-
-  if (counter > MaxTries) {
-    alert("You have no more tries left. Press F5 to play again");
-    break
-  }
-
-  if (Attempts == listItems)
-  alert(`Well done, that is correct! The random number was ${RandomNumber}! It took you ${counter} attempts to get the correct number`);
+var campingList = ['tent', 'backpack', 'sleeping bag', 'food', 'hat'];
+for (var i = 0; i < campingList.length; i++) {
 
 }
+
+while (Attempts != listItems) {
+  var Attempts = prompt("Please enter items for camping ");
+  counter += 1;
+  }
+
+  if (counter > MaxTries) {
+    alert("You have no more tries left. Better luck next time.");
+  }
+
+var listItems = prompt('What items do you need to bring for camping?').toLowerCase();
+if (listItems === 'tent', 'back pack', 'sleeping bag', 'food', 'hat') {
+  // console.log('Yes! I live in outer space');
+  alert('That is correct!');
+
+  
+  }
