@@ -46,24 +46,40 @@ if (doYouHave === 'yes' || doYouHave === 'y') {
 alert(`It is wonderful to meet you ${username}! I am so thrilled you could tell I am from Neptune. Did my accent give it away? I can tell you realized I am now stranded here not thanks in part to the smoldering wreckage of metal behind me that used to be my ship. I am so happy to hear you have a spare rocket ship that can take me home! Shall we lift off to the cosmos above?`);
 
 // Ryan - Question 6 (Lab 3 Update):
-var UserNumber = 10;
-var counter = 0;
-var MaxTries = 6; //Max number of times the user can guess the random number
+var numberRange = 10;
+var numberOfGuesses = 0;
+var MaxTries = 5; //Max number of times the user can guess the random number
+var usersGuess = null; //The number the user guessed
+var targetNumber = Math.floor(Math.random() * numberRange) + 1; //Random number the user is trying to guess
 
-var RandomNumber = Math.floor(Math.random() * UserNumber) + 1;
+while (usersGuess != targetNumber && numberOfGuesses < MaxTries) {
+  usersGuess = prompt("Please select a random number between 1 and " + numberRange);
+  numberOfGuesses += 1;
 
-while (Attempts != RandomNumber) {
-  var Attempts = prompt("Please select a random number between 1 and " + UserNumber);
-  counter += 1;
+  //Check if the user entered a number
+  if(isNaN(usersGuess)){
+      alert("Dude... That's not even a number.");
+  } 
+  else
+  {
+      //Check if the user's guess was too high or too low
+      if(usersGuess > targetNumber){
+          alert("Too high");
+      }
+      if(usersGuess < targetNumber){
+          alert("Too low");
+      }
 
-  if (counter > MaxTries) {
-    alert("You have no more tries left. Better luck next time.");
-    break
+      //The user guessed correctly
+      if (usersGuess == targetNumber){
+        alert(`Well done, that is correct! The random number was ${targetNumber}! It took you ${counter} attempts to get the correct number`);
+      }
   }
 
-  if (Attempts == RandomNumber)
-    alert(`Well done, that is correct! The random number was ${RandomNumber}! It took you ${counter} attempts to get the correct number`);
-
+    //User guessed incorrectly on their last attempt, wish them luck
+  if (numberOfGuesses == MaxTries && usersGuess != targetNumber) {
+    alert("You have no more tries left. Better luck next time.");
+  }
 }
 
 // Ryan - Question 7 (Lab 3 Update):
