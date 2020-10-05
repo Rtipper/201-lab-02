@@ -48,11 +48,11 @@ alert(`It is wonderful to meet you ${username}! I am so thrilled you could tell 
 // Ryan - Question 6 (Lab 3 Update):
 var numberRange = 10;
 var numberOfGuesses = 0;
-var MaxTries = 5; //Max number of times the user can guess the random number
+var maxTries = 5; //Max number of times the user can guess the random number
 var usersGuess = null; //The number the user guessed
 var targetNumber = Math.floor(Math.random() * numberRange) + 1; //Random number the user is trying to guess
 
-while (usersGuess != targetNumber && numberOfGuesses < MaxTries) {
+while (usersGuess != targetNumber && numberOfGuesses < maxTries) {
   usersGuess = prompt("Please select a random number between 1 and " + numberRange);
   numberOfGuesses += 1;
 
@@ -77,33 +77,36 @@ while (usersGuess != targetNumber && numberOfGuesses < MaxTries) {
   }
 
     //User guessed incorrectly on their last attempt, wish them luck
-  if (numberOfGuesses == MaxTries && usersGuess != targetNumber) {
+  if (numberOfGuesses == maxTries && usersGuess != targetNumber) {
     alert("You have no more tries left. Better luck next time.");
   }
 }
 
 // Ryan - Question 7 (Lab 3 Update):
 var counter = 0;
-var MaxTries = 6;
-
+var maxTries = 6;
 var campingList = ['tent', 'backpack', 'sleeping bag', 'food', 'hat'];
-for (var i = 0; i < campingList.length; i++) {
+var usersGuess = null;
+var foundMatch = false;
 
+while (!foundMatch && counter < maxTries) {
+  usersGuess = prompt("Please enter items for camping");
+  counter += 1;
+
+  for (var i = 0; i < campingList.length; i++) {
+    if(campingList[i].toLowerCase() == usersGuess.toLowerCase()){
+        foundMatch = true;
+        break;
+    }
+  }
+
+  if(foundMatch){
+      alert("Correct! A "+usersGuess+" is on the camping list.");
+  } else{
+      alert("Sorry, A "+usersGuess+" is NOT on the camping list.");
+      if(counter == maxTries){
+          alert("You have no more tries left. Better luck next time.");
+      }
+  }
 }
 
-while (Attempts != listItems) {
-  var Attempts = prompt("Please enter items for camping ");
-  counter += 1;
-  }
-
-  if (counter > MaxTries) {
-    alert("You have no more tries left. Better luck next time.");
-  }
-
-var listItems = prompt('What items do you need to bring for camping?').toLowerCase();
-if (listItems === 'tent', 'back pack', 'sleeping bag', 'food', 'hat') {
-  // console.log('Yes! I live in outer space');
-  alert('That is correct!');
-
-  
-  }
