@@ -4,11 +4,14 @@ var username = prompt('What is your name?')
 // console.log('Greetings ' + username);
 alert('Greetings ' + username)
 
+var pointTotal = 0;
+
 // Ryan - Question 1:
 var homeLocation = prompt('Am I from outer space?').toLowerCase();
 if (homeLocation === 'yes' || homeLocation === 'y') {
   // console.log('Yes! I live in outer space');
   alert('Yes! I live in outer space.');
+  pointTotal++;
 } else if (homeLocation === 'no' || homeLocation === 'n') {
     // console.log('That is incorrect as I am indeed from outer space');
     alert('That is incorrect as I am indeed from outer space.');
@@ -20,6 +23,7 @@ var planet = prompt('Am I from the planet Neptune?').toLowerCase();
 if (planet === 'yes' || planet === 'y') {
   // console.log('Yes! I am indeed from Neptune');
   alert('Yes! I am indeed from Neptune');
+  pointTotal++;
 } else if (planet === 'no' || planet === 'n') {
   // console.log('Incorrect, I do indeed hail from the wounderous Neptune!')
   alert('Incorrect, I do indeed hail from the wonderous Neptune!');
@@ -30,6 +34,7 @@ var rocketShip = prompt('Did I first arrive there via rocket ship?').toLowerCase
 if (rocketShip === 'yes' || rocketShip === 'y') {
   // console.log('Yes! I did arrive by rocket ship');
   alert('Yes! I did first arrive there by rocket ship');
+  pointTotal++;
 } else if (rocketShip === 'no' || rocketShip === 'n') {
   // console.log('That is incorrect. I did indeed arrive on a rocket ship. Space is cold!')
   alert('That is incorrect. I did indeed arrive on a rocket ship. Space is cold!');
@@ -40,6 +45,7 @@ var returnHome = prompt('Will you help me return home?').toLowerCase();
 if (returnHome === 'yes' || returnHome === 'y') {
   // console.log('Yes? Hooray! I can/t wait to retun home!');
   alert('Yes? Hooray! I cant wait to retun home!');
+  pointTotal++;
 } else if (returnHome === 'no' || returnHome === 'n') {
   // console.log ('Excuse me? I am a guest on your planet and you are being so rude as to not help!?')
   alert('Excuse me? I am a guest on your planet and you are being so rude as to not help!?');
@@ -50,6 +56,7 @@ var doYouHave = prompt('Wait, do you have an extra rocket ship?').toLowerCase();
 if (doYouHave === 'yes' || doYouHave === 'y') {
   // console.log('This is wonderful news indeed!');
   alert('This is wonderful news indeed!');
+  pointTotal++;
 } else if (doYouHave === 'no' || returnHome === 'n') {
   // console.log ('You dont? Hmm. This is a problem.');
   alert('You dont? Hmmm. This is a problem.');
@@ -90,6 +97,7 @@ while (usersGuess != targetNumber && numberOfGuesses < maxTries) {
       //The user guessed correctly
       if (usersGuess == targetNumber){
         alert(`Well done ${username}, that is correct! The random number was ${targetNumber}! It took you ${counter} attempts to get the correct number`);
+        pointTotal++;
       }
   }
 
@@ -119,11 +127,13 @@ while (!foundMatch && counter < maxTries) {
 
   if(foundMatch){
       alert("Correct! A "+usersGuess+" is on the camping list.");
+      pointTotal++;
   } else{
       alert("Sorry, A "+usersGuess+" is NOT on the camping list.");
       if(counter == maxTries){
-          alert(`You have no more tries left. Better luck next time ${username}. The correct answers are tent, backpack, sleeping bag, food and hat` );
+          alert(`You have no more tries left. Better luck next time ${username}. The correct answers are tent, backpack, sleeping bag, food and hat. Press F5 to play again!` );
       }
   }
 }
 
+alert(`The total amount of points you got is ${pointTotal}!`)
