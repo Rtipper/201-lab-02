@@ -122,7 +122,7 @@ while (!foundMatch && counter < maxTries) {
   } else{
       alert("Sorry, A "+usersGuess+" is NOT on the camping list.");
       if(counter == maxTries){
-          alert("You have no more tries left. Better luck next time.");
+          alert(`You have no more tries left. Better luck next time ${username}. The correct answers are tent, backpack, sleeping bag, food and hat` );
       }
   }
 }
