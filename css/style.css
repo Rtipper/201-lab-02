@@ -25,6 +25,11 @@ li {
   border: 2px solid rgb(5, 112, 161);
 }
 
+ol {
+  list-style: decimal;
+  list-style-position: inside;
+}
+
 footer {
   color: rgb(2, 108, 179);
 }
