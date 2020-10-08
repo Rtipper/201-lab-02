@@ -24,14 +24,18 @@ questionOne();
 
 // Ryan - Question 2:
 var planet = prompt('Am I from the planet Neptune?').toLowerCase();
-if (planet === 'yes' || planet === 'y') {
-  // console.log('Yes! I am indeed from Neptune');
-  alert('Yes! I am indeed from Neptune');
-  pointTotal++;
-} else if (planet === 'no' || planet === 'n') {
-  // console.log('Incorrect, I do indeed hail from the wounderous Neptune!')
-  alert('Incorrect, I do indeed hail from the wonderous Neptune!');
+
+function questionTwo(){
+  if (planet === 'yes' || planet === 'y') {
+    // console.log('Yes! I am indeed from Neptune');
+    alert('Yes! I am indeed from Neptune');
+    pointTotal++;
+  } else if (planet === 'no' || planet === 'n') {
+    // console.log('Incorrect, I do indeed hail from the wounderous Neptune!')
+    alert('Incorrect, I do indeed hail from the wonderous Neptune!');
+  }
 }
+questionTwo();
 
 // Ryan - Question 3:
 var rocketShip = prompt('Did I first arrive there via rocket ship?').toLowerCase();
@@ -80,7 +84,7 @@ var maxTries = 5; //Max number of times the user can guess the random number
 var usersGuess = null; //The number the user guessed
 var targetNumber = Math.floor(Math.random() * numberRange) + 1; //Random number the user is trying to guess
 
-function greeter (){
+function questionSix (){
   while (usersGuess != targetNumber && numberOfGuesses < maxTries) {
     usersGuess = prompt("Please select a random number between 1 and " + numberRange);
     numberOfGuesses += 1;
@@ -112,7 +116,7 @@ function greeter (){
     }
   }
 }
-greeter();
+questionSix();
 
 // Ryan - Question 7 (Lab 3 Update):
 var counter = 0;
