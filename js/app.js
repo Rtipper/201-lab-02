@@ -8,14 +8,18 @@ var pointTotal = 0;
 
 // Ryan - Question 1:
 var homeLocation = prompt('Am I from outer space?').toLowerCase();
-if (homeLocation === 'yes' || homeLocation === 'y') {
-  // console.log('Yes! I live in outer space');
-  alert('Yes! I live in outer space.');
-  pointTotal++;
-} else if (homeLocation === 'no' || homeLocation === 'n') {
-    // console.log('That is incorrect as I am indeed from outer space');
-    alert('That is incorrect as I am indeed from outer space.');
-  }
+
+function questionOne() {
+  if (homeLocation === 'yes' || homeLocation === 'y') {
+    // console.log('Yes! I live in outer space');
+    alert('Yes! I live in outer space.');
+    pointTotal++;
+  } else if (homeLocation === 'no' || homeLocation === 'n') {
+      // console.log('That is incorrect as I am indeed from outer space');
+      alert('That is incorrect as I am indeed from outer space.');
+    }
+}
+questionOne();  
 
 
 // Ryan - Question 2:
