@@ -76,36 +76,39 @@ var maxTries = 5; //Max number of times the user can guess the random number
 var usersGuess = null; //The number the user guessed
 var targetNumber = Math.floor(Math.random() * numberRange) + 1; //Random number the user is trying to guess
 
-while (usersGuess != targetNumber && numberOfGuesses < maxTries) {
-  usersGuess = prompt("Please select a random number between 1 and " + numberRange);
-  numberOfGuesses += 1;
+function greeter (){
+  while (usersGuess != targetNumber && numberOfGuesses < maxTries) {
+    usersGuess = prompt("Please select a random number between 1 and " + numberRange);
+    numberOfGuesses += 1;
 
-  //Check if the user entered a number
-  if(isNaN(usersGuess)){
-      alert(`Nice try ${username} but that aint even a number.`);
-  } 
-  else
-  {
-      //Check if the user's guess was too high or too low
-      if(usersGuess > targetNumber){
-          alert(`Too high, ${username}`);
-      }
-      if(usersGuess < targetNumber){
-          alert(`Too low, ${username}`);
-      }
+    //Check if the user entered a number
+    if(isNaN(usersGuess)){
+        alert(`Nice try ${username} but that aint even a number.`);
+    } 
+    else
+    {
+        //Check if the user's guess was too high or too low
+        if(usersGuess > targetNumber){
+            alert(`Too high, ${username}`);
+        }
+        if(usersGuess < targetNumber){
+            alert(`Too low, ${username}`);
+        }
 
-      //The user guessed correctly
-      if (usersGuess == targetNumber){
-        alert(`Well done ${username}, that is correct! The random number was ${targetNumber}! It took you ${counter} attempts to get the correct number`);
-        pointTotal++;
-      }
-  }
+        //The user guessed correctly
+        if (usersGuess == targetNumber){
+          alert(`Well done ${username}, that is correct! The random number was ${targetNumber}! It took you ${counter} attempts to get the correct number`);
+          pointTotal++;
+        }
+    }
 
-    //User guessed incorrectly on their last attempt, wish them luck
-  if (numberOfGuesses == maxTries && usersGuess != targetNumber) {
-    alert("You have no more tries left. Better luck next time.");
+      //User guessed incorrectly on their last attempt, wish them luck
+    if (numberOfGuesses == maxTries && usersGuess != targetNumber) {
+      alert("You have no more tries left. Better luck next time.");
+    }
   }
 }
+greeter();
 
 // Ryan - Question 7 (Lab 3 Update):
 var counter = 0;
