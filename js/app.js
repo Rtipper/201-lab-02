@@ -39,37 +39,45 @@ questionTwo();
 
 // Ryan - Question 3:
 var rocketShip = prompt('Did I first arrive there via rocket ship?').toLowerCase();
-if (rocketShip === 'yes' || rocketShip === 'y') {
-  // console.log('Yes! I did arrive by rocket ship');
-  alert('Yes! I did first arrive there by rocket ship');
-  pointTotal++;
-} else if (rocketShip === 'no' || rocketShip === 'n') {
-  // console.log('That is incorrect. I did indeed arrive on a rocket ship. Space is cold!')
-  alert('That is incorrect. I did indeed arrive on a rocket ship. Space is cold!');
+function questionThree() {
+  if (rocketShip === 'yes' || rocketShip === 'y') {
+    // console.log('Yes! I did arrive by rocket ship');
+    alert('Yes! I did first arrive there by rocket ship');
+    pointTotal++;
+  } else if (rocketShip === 'no' || rocketShip === 'n') {
+    // console.log('That is incorrect. I did indeed arrive on a rocket ship. Space is cold!')
+    alert('That is incorrect. I did indeed arrive on a rocket ship. Space is cold!');
+  }
 }
+questionThree();
 
 // Ryan - Question 4:
 var returnHome = prompt('Will you help me return home?').toLowerCase();
-if (returnHome === 'yes' || returnHome === 'y') {
-  // console.log('Yes? Hooray! I can/t wait to retun home!');
-  alert('Yes? Hooray! I cant wait to retun home!');
-  pointTotal++;
-} else if (returnHome === 'no' || returnHome === 'n') {
-  // console.log ('Excuse me? I am a guest on your planet and you are being so rude as to not help!?')
-  alert('Excuse me? I am a guest on your planet and you are being so rude as to not help!?');
+function questionFour() {
+  if (returnHome === 'yes' || returnHome === 'y') {
+    // console.log('Yes? Hooray! I can/t wait to retun home!');
+    alert('Yes? Hooray! I cant wait to retun home!');
+    pointTotal++;
+  } else if (returnHome === 'no' || returnHome === 'n') {
+    // console.log ('Excuse me? I am a guest on your planet and you are being so rude as to not help!?')
+    alert('Excuse me? I am a guest on your planet and you are being so rude as to not help!?');
+  }
 }
+questionFour();
 
 // Ryan - Question 5:
 var doYouHave = prompt('Wait, do you have an extra rocket ship?').toLowerCase();
-if (doYouHave === 'yes' || doYouHave === 'y') {
-  // console.log('This is wonderful news indeed!');
-  alert('This is wonderful news indeed!');
-  pointTotal++;
-} else if (doYouHave === 'no' || returnHome === 'n') {
-  // console.log ('You dont? Hmm. This is a problem.');
-  alert('You dont? Hmmm. This is a problem.');
+function questionFive() {
+  if (doYouHave === 'yes' || doYouHave === 'y') {
+    // console.log('This is wonderful news indeed!');
+    alert('This is wonderful news indeed!');
+    pointTotal++;
+  } else if (doYouHave === 'no' || returnHome === 'n') {
+    // console.log ('You dont? Hmm. This is a problem.');
+    alert('You dont? Hmmm. This is a problem.');
+  }
 }
-
+questionFive();
 
 // Final Message
 // alert('It is wonderful to meet you ' + username + '. ' + 'I am so thrilled you could tell I am from Neptune' + '. ' + 'Did my accent give it away' + '? ' + 'I can tell you realized I am now stranded here no thanks in part to the smoldering wreckage of metal behind me that used to be my ship' + '. ' + 'I am so happy to hear you have a spare rocket ship that can take me home' + '! ' + 'Shall we lift off to the cosmos above' + '? ');
@@ -125,26 +133,29 @@ var campingList = ['tent', 'backpack', 'sleeping bag', 'food', 'hat'];
 var usersGuess = null;
 var foundMatch = false;
 
-while (!foundMatch && counter < maxTries) {
-  usersGuess = prompt("Please enter items for camping");
-  counter += 1;
+function questionSeven() {
+  while (!foundMatch && counter < maxTries) {
+    usersGuess = prompt("Please enter items for camping");
+    counter += 1;
 
-  for (var i = 0; i < campingList.length; i++) {
-    if(campingList[i].toLowerCase() == usersGuess.toLowerCase()){
-        foundMatch = true;
-        break;
+    for (var i = 0; i < campingList.length; i++) {
+      if(campingList[i].toLowerCase() == usersGuess.toLowerCase()){
+          foundMatch = true;
+          break;
+      }
+    }
+
+    if(foundMatch){
+        alert("Correct! A "+usersGuess+" is on the camping list.");
+        pointTotal++;
+    } else{
+        alert("Sorry, A "+usersGuess+" is NOT on the camping list.");
+        if(counter == maxTries){
+            alert(`You have no more tries left. Better luck next time ${username}. The correct answers are tent, backpack, sleeping bag, food and hat. Press F5 to play again!` );
+        }
     }
   }
-
-  if(foundMatch){
-      alert("Correct! A "+usersGuess+" is on the camping list.");
-      pointTotal++;
-  } else{
-      alert("Sorry, A "+usersGuess+" is NOT on the camping list.");
-      if(counter == maxTries){
-          alert(`You have no more tries left. Better luck next time ${username}. The correct answers are tent, backpack, sleeping bag, food and hat. Press F5 to play again!` );
-      }
-  }
 }
+questionSeven();
 
 alert(`The total amount of points you got is ${pointTotal}!`)
