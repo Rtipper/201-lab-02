@@ -15,17 +15,17 @@ function questionOne() {
     alert('Yes! I live in outer space.');
     pointTotal++;
   } else if (homeLocation === 'no' || homeLocation === 'n') {
-      // console.log('That is incorrect as I am indeed from outer space');
-      alert('That is incorrect as I am indeed from outer space.');
-    }
+    // console.log('That is incorrect as I am indeed from outer space');
+    alert('That is incorrect as I am indeed from outer space.');
+  }
 }
-questionOne();  
+questionOne();
 
 
 // Ryan - Question 2:
 var planet = prompt('Am I from the planet Neptune?').toLowerCase();
 
-function questionTwo(){
+function questionTwo() {
   if (planet === 'yes' || planet === 'y') {
     // console.log('Yes! I am indeed from Neptune');
     alert('Yes! I am indeed from Neptune');
@@ -92,33 +92,32 @@ var maxTries = 5; //Max number of times the user can guess the random number
 var usersGuess = null; //The number the user guessed
 var targetNumber = Math.floor(Math.random() * numberRange) + 1; //Random number the user is trying to guess
 
-function questionSix (){
+function questionSix() {
   while (usersGuess != targetNumber && numberOfGuesses < maxTries) {
     usersGuess = prompt("Please select a random number between 1 and " + numberRange);
     numberOfGuesses += 1;
 
     //Check if the user entered a number
-    if(isNaN(usersGuess)){
-        alert(`Nice try ${username} but that aint even a number.`);
-    } 
-    else
-    {
-        //Check if the user's guess was too high or too low
-        if(usersGuess > targetNumber){
-            alert(`Too high, ${username}`);
-        }
-        if(usersGuess < targetNumber){
-            alert(`Too low, ${username}`);
-        }
+    if (isNaN(usersGuess)) {
+      alert(`Nice try ${username} but that aint even a number.`);
+    }
+    else {
+      //Check if the user's guess was too high or too low
+      if (usersGuess > targetNumber) {
+        alert(`Too high, ${username}`);
+      }
+      if (usersGuess < targetNumber) {
+        alert(`Too low, ${username}`);
+      }
 
-        //The user guessed correctly
-        if (usersGuess == targetNumber){
-          alert(`Well done ${username}, that is correct! The random number was ${targetNumber}! It took you ${counter} attempts to get the correct number`);
-          pointTotal++;
-        }
+      //The user guessed correctly
+      if (usersGuess == targetNumber) {
+        alert(`Well done ${username}, that is correct! The random number was ${targetNumber}! It took you ${counter} attempts to get the correct number`);
+        pointTotal++;
+      }
     }
 
-      //User guessed incorrectly on their last attempt, wish them luck
+    //User guessed incorrectly on their last attempt, wish them luck
     if (numberOfGuesses == maxTries && usersGuess != targetNumber) {
       alert("You have no more tries left. Better luck next time.");
     }
@@ -139,6 +138,22 @@ function questionSeven() {
     counter += 1;
 
     for (var i = 0; i < campingList.length; i++) {
+
+      if (campingList[i].toLowerCase() == usersGuess.toLowerCase()) {
+        foundMatch = true;
+        break;
+      }
+    }
+
+    if (foundMatch) {
+      alert("Correct! A " + usersGuess + " is on the camping list.");
+      pointTotal++;
+    } else {
+      alert("Sorry, A " + usersGuess + " is NOT on the camping list.");
+      if (counter == maxTries) {
+        alert(`You have no more tries left. Better luck next time ${username}. The correct answers are tent, backpack, sleeping bag, food and hat. Press F5 to play again!`);
+      }
+
       if(campingList[i].toLowerCase() == usersGuess.toLowerCase()){
           foundMatch = true;
           break;
@@ -153,6 +168,7 @@ function questionSeven() {
         if(counter == maxTries){
             alert(`You have no more tries left. Better luck next time ${username}. The correct answers are tent, backpack, sleeping bag, food and hat. Press F5 to play again!` );
         }
+
     }
   }
 }
